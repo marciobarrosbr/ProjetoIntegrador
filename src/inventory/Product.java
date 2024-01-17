@@ -73,7 +73,7 @@ public class Product {
 	
 	//get total value of Inventory for this Product
 	public double getInventoryValue() {
-		return price * itemNumber;
+		return price * qtyInStock;
 	}//end method getInventorryValue
 	
 	//override toString() Method from the Object class
