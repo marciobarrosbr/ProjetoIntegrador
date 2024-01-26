@@ -76,6 +76,16 @@ public class Product {
 		return price * qtyInStock;
 	}//end method getInventorryValue
 	
+	//add a quantity to qtyInStock used when receiving a shipment 
+	public void addToInvetory(int quantity) {
+		this.qtyInStock += quantity;
+	}//end method addToInventory
+	
+	//subtract a quantity from used when making sales
+	public void deductFromInventory(int quantity) {
+		this.qtyInStock -= quantity;
+	}//end method deductfromInventory
+	
 	//override toString() Method from the Object class
 	//to allow method display of each object to the console
 	public String toString()
