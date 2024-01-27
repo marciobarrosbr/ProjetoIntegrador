@@ -69,6 +69,7 @@ public class Product {
 	//updates the value active
 	public void setActive(boolean status) {
 		this.active = status;
+		
 	}//end method setActive
 	
 	//get total value of Inventory for this Product
@@ -78,12 +79,20 @@ public class Product {
 	
 	//add a quantity to qtyInStock used when receiving a shipment 
 	public void addToInvetory(int quantity) {
-		this.qtyInStock += quantity;
+		if(this.active) {
+			this.qtyInStock += quantity;
+		}else {
+			System.out.println("Cannot add stock to a distontied line!");
+		}	
 	}//end method addToInventory
 	
 	//subtract a quantity from used when making sales
 	public void deductFromInventory(int quantity) {
-		this.qtyInStock -= quantity;
+		if(this.active) {
+			this.qtyInStock -= quantity;
+		}else {
+			System.out.println("Cannot deduct stock from a distontied line!");
+		}
 	}//end method deductfromInventory
 	
 	//override toString() Method from the Object class
